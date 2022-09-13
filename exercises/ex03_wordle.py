@@ -49,7 +49,7 @@ def main() -> None:
     secret: str = "codes"
     while turn < 6 and guess != secret:
         turn += 1
-        print(f"=== Turn {turn} out of 6 ===")
+        print(f"=== Turn {turn}/6 ===")
         guess = input_guess(5)
         print(emojified(guess, secret))
     if guess == secret:
