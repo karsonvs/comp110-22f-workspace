@@ -35,10 +35,12 @@ def emojified(guess: str, secret: str) -> str:
 
 
 def input_guess(n: int) -> str:
+    """Takes user input and checks if it is the proper number of characters."""
     user: str = input(f"Enter a {n} character word: ")
     while len(user) != n:
         user = input(f"That wasn't {n} chars! Try again: ")
     return user
+
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
@@ -54,6 +56,7 @@ def main() -> None:
         print(f"You won in {turn}/6 turns!")
     else:
         print("X/6 - Sorry try again tomorrow!")
+
 
 if __name__ == "__main__":
     main()
