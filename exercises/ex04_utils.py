@@ -6,7 +6,7 @@ __author__: str = "730561113"
 def all(nums: list[int], n: int) -> bool:
     """Checks if all the numbers in a list of ints are the same as the other int provided."""
     if len(nums) == 0:
-        raise ValueError("all() arg is an empty List")
+        return False
     i: int = 0
     while i < len(nums):
         if nums[i] != n:
