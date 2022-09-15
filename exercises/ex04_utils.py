@@ -2,8 +2,10 @@
 
 __author__: str = "730561113"
 
-def all(nums: list[int], n: int) -> bool :
+
+def all(nums: list[int], n: int) -> bool:
     """Checks if all the numbers in a list of ints are the same as the other int provided."""
+    assert len(nums) > 0
     i: int = 0
     while i < len(nums):
         if nums[i] != n:
@@ -14,7 +16,7 @@ def all(nums: list[int], n: int) -> bool :
 
 def max(nums: list[int]) -> int:
     """Finds the max value in a list of ints."""
-    max: int = 0
+    max: int = -9999999
     i: int = 0
     if len(nums) == 0:
         raise ValueError("max() arg is an empty List")
@@ -27,7 +29,8 @@ def max(nums: list[int]) -> int:
 
 def is_equal(input: list[int], input2: list[int]) -> bool:
     """Determines whether two lists contain the same values in the exact same order."""
-    assert len(input) == len(input2)
+    if len(input) != len(input2):
+        return False
     i: int = 0
     while i < len(input):
         if input[i] != input2[i]:
