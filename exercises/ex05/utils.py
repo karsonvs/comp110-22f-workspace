@@ -31,7 +31,7 @@ def sub(xs: list[int], x: int, y: int) -> list[int]:
     sub_list: list[int] = []
     if x < 0:
         x = 0
-    if y > (len(xs) - 1):
+    if y > (len(xs)):
         y = (len(xs) - 1)
     if len(xs) == 0:
         return []
