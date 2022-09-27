@@ -31,6 +31,7 @@ def test_sub_empty_list() -> None:
     y: int = 3
     assert sub(xs, x, y) == []
 
+
 def test_sub_negative_start() -> None:
     """Tests when start value is negative."""
     xs: list[int] = [1, 2]

@@ -29,13 +29,13 @@ def concat(xs: list[int], ys: list[int]) -> list[int]:
 
 
 def sub(xs: list[int], x: int, y: int) -> list[int]:
-    """Takes a list, start value, and end value, and creates a sub list from the start value to end value (non-inclusive)"""
+    """Takes a list, start value, and end value, and creates a sub list from the start value to end value (non-inclusive)."""
     assert x < y
     sub_list: list[int] = []
     if x < 0:
         x = 0
-    if y >= len(xs):
-        y = (len(xs) - 1)
+    if y > len(xs):
+        y = len(xs)
     if len(xs) == 0:
         return []
     while x < y:
