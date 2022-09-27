@@ -4,6 +4,7 @@ __author__ = "730561113"
 
 
 def only_evens(xs: list[int]) -> list[int]:
+    """Takes a list and creates a new list of only the even values in the first list."""
     evens: list[int] = []
     i: int = 0
     while i < len(xs):
@@ -14,6 +15,7 @@ def only_evens(xs: list[int]) -> list[int]:
 
 
 def concat(xs: list[int], ys: list[int]) -> list[int]:
+    """Takes two lists and puts them together in a new list."""
     concat_list: list[int] = []
     i: int = 0
     while i < len(xs):
@@ -27,11 +29,12 @@ def concat(xs: list[int], ys: list[int]) -> list[int]:
 
 
 def sub(xs: list[int], x: int, y: int) -> list[int]:
+    """Takes a list, start value, and end value, and creates a sub list from the start value to end value (non-inclusive)"""
     assert x < y
     sub_list: list[int] = []
     if x < 0:
         x = 0
-    if y > (len(xs)):
+    if y >= len(xs):
         y = (len(xs) - 1)
     if len(xs) == 0:
         return []
