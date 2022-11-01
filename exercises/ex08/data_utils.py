@@ -8,14 +8,13 @@ from csv import DictReader
 
 def read_csv_rows(path: str) -> list[dict[str, str]]:
     """Iterates through a csv and turns it into a list of the rows."""
-    result: list[dict[str,str]] = []
-    file_handle = open(path, "r", encoding = "utf8")
+    result: list[dict[str, str]] = []
+    file_handle = open(path, "r", encoding="utf8")
     csv_reader = DictReader(path)
     for line in csv_reader:
         result.append(line)
     file_handle.close()
     return result
-
 
 
 def column_values(xs: list[dict[str, str]], column: str) -> list[str]:
@@ -30,7 +29,7 @@ def column_values(xs: list[dict[str, str]], column: str) -> list[str]:
 def columnar(rows: list[dict[str, str]]) -> dict[str, list[str]]:
     """Takes a table of rows and turns into a table of columns."""
     result: dict[str, list[str]] = []
-    first: dict[str,str] = rows[0]
+    first: dict[str, str] = rows[0]
     for column in first:
         result[column] = column_values(rows, column)
     return result
@@ -38,7 +37,7 @@ def columnar(rows: list[dict[str, str]]) -> dict[str, list[str]]:
 
 def head(table: dict[str, list[str]], rows: int) -> dict[str, list[str]]:
     """Takes a table of rows and turns the number of rows specified."""
-    result: dict[str, list[str]] = []
+    result: dict[str, list[str]] = {}
     for x in table:
         xs: list[str] = []
         for row in table[x]:
